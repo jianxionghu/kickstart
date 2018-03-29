@@ -46,6 +46,7 @@ class ContributeForm extends Component {
             labelPosition="right"
           />
           <Message error header="Oops!" content={this.state.errorMessage} />
+          <p />
           <Button primary loading={this.state.loading}>
             Contribute!
           </Button>
