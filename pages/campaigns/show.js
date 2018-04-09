@@ -35,33 +35,31 @@ class CampaignShow extends Component {
       {
         header: manager,
         description:
-          "The manager created this campaign and can create request to withdraw money",
-        meta: "Address of manager",
+          "众筹发起人(所有者)创建了本众筹合约，它可以发起一个提现请求。",
+        meta: "众筹发起人(所有者)地址",
         style: { overflowWrap: "break-word" }
       },
       {
         header: minimumContribution,
-        description:
-          "You must contribute at least this much of wei to become an approver",
-        meta: "Minimum Contribution (wei unit)"
+        description: "每个参与众筹的人必须投入以下最低资金，并且获取投票权。",
+        meta: "最低起投额度 (以wei为单位)"
       },
       {
         header: requestsCount,
         description:
-          "A request tryies to withdraw money from he contract. Requests must be approved by approvers",
-        meta: "Number of Requests"
+          "合约发起人提现请求数量，提现请求必须得到50%投资人的同意，这个钱才能从智能合约里面提到指定地址。",
+        meta: "目前已经有的请求付款数量"
       },
       {
         header: approversCount,
         description:
-          "Number of people who have already donated to this campaign",
-        meta: "Number of Approvers (wei)"
+          "当前出资人的数量，每个出资人都有对提现请求批准的投票权利。",
+        meta: "当前出资人的数量"
       },
       {
         header: web3.utils.fromWei(balance, "ether"),
-        description:
-          "The balance is how much money this campaign has left to spend.",
-        meta: "Campaign Balance （ether）"
+        description: "这个数字代表当前众筹合约的未花费的资金数量。",
+        meta: "当前众筹合约拥有的ETH数量（ether）"
       }
     ];
 
@@ -71,7 +69,7 @@ class CampaignShow extends Component {
   render() {
     return (
       <Layout>
-        <h3> CampaignShow </h3>
+        <h3> 众筹详情 </h3>
         <Grid>
           <Grid.Row>
             <Grid.Column width={12}>{this.renderCards()}</Grid.Column>
@@ -83,7 +81,7 @@ class CampaignShow extends Component {
             <Grid.Column>
               <Link route={`/campaigns/${this.props.address}/requests`}>
                 <a>
-                  <Button primary>View Requests</Button>
+                  <Button primary>查看提现请求详情</Button>
                 </a>
               </Link>
             </Grid.Column>

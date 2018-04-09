@@ -35,10 +35,10 @@ class CampaignNew extends Component {
   render() {
     return (
       <Layout>
-        <h3>Create a Campaign!</h3>
+        <h3>创建一个新的众筹合约</h3>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
-            <label>Minimum Contibution</label>
+            <label>最小起投资金额 (单位wei)</label>
             <Input
               label="wei"
               labelPosition="right"
@@ -50,7 +50,7 @@ class CampaignNew extends Component {
             />
           </Form.Field>
           <Button loading={this.state.loading} type="submit" primary>
-            Create
+            创建
           </Button>
           <Message error header="Oops" content={this.state.errorMessage} />
         </Form>

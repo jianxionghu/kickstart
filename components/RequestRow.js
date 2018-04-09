@@ -41,14 +41,14 @@ class RequestRow extends Component {
           {/* 如果complete是false，则渲染后面的Button，如果是true则渲染null **/
           request.complete ? null : (
             <Button color="green" basic onClick={this.onApprove}>
-              Approve
+              批准付款请求
             </Button>
           )}
         </Cell>
         <Cell>
           {request.complete ? null : (
             <Button color="teal" basic onClick={this.onFinalize}>
-              Finalize
+              提现
             </Button>
           )}
         </Cell>

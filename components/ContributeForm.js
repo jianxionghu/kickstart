@@ -38,7 +38,7 @@ class ContributeForm extends Component {
     return (
       <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
         <Form.Field>
-          <label>Amount to Contribute</label>
+          <label>填入准备投入的资金数量（单位ether）</label>
           <Input
             value={this.state.value}
             onChange={event => this.setState({ value: event.target.value })}
@@ -48,7 +48,7 @@ class ContributeForm extends Component {
           <Message error header="Oops!" content={this.state.errorMessage} />
           <p />
           <Button primary loading={this.state.loading}>
-            Contribute!
+            点击打钱
           </Button>
         </Form.Field>
       </Form>

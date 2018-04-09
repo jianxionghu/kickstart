@@ -47,29 +47,29 @@ class RequestIndex extends Component {
 
     return (
       <Layout>
-        <h3>Request</h3>
+        <h3>当前这个众筹合约下的提现请求</h3>
         <Link route={`/campaigns/${this.props.address}/requests/new`}>
           <a>
             <Button primary floated="right" style={{ marginBottom: 10 }}>
-              Add Request
+              添加一个提现请求
             </Button>
           </a>
         </Link>
         <Table>
           <Header>
             <Row>
-              <HeaderCell>ID</HeaderCell>
-              <HeaderCell>Description</HeaderCell>
-              <HeaderCell>Amount</HeaderCell>
-              <HeaderCell>Recipient</HeaderCell>
-              <HeaderCell>Approval Count</HeaderCell>
-              <HeaderCell>Approve</HeaderCell>
-              <HeaderCell>Finalize</HeaderCell>
+              <HeaderCell>编号</HeaderCell>
+              <HeaderCell>提现付款描述</HeaderCell>
+              <HeaderCell>提现资金数量</HeaderCell>
+              <HeaderCell>收款方地址</HeaderCell>
+              <HeaderCell>已批准数/总投资人数</HeaderCell>
+              <HeaderCell>批准</HeaderCell>
+              <HeaderCell>提现</HeaderCell>
             </Row>
           </Header>
           <Body>{this.renderRows()}</Body>
         </Table>
-        <div> Found {this.props.requestCount} requests </div>
+        <div> 找到 ( {this.props.requestCount} ) 条提现支付请求 </div>
       </Layout>
     );
   }

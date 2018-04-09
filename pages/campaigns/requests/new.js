@@ -46,37 +46,40 @@ class RequestNew extends Component {
     return (
       <Layout>
         <Link route={`/campaigns/${this.props.address}/requests`}>
-          <a>Back</a>
+          <a>返回</a>
         </Link>
-        <h3>Create a Request</h3>
+        <h3>新建一个提现支付请求</h3>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
-            <label>Description</label>
+            <label>请求提现支付的理由</label>
             <Input
               value={this.state.description}
+              placeholder="比如需要支付供应商模具费..."
               onChange={event =>
                 this.setState({ description: event.target.value })
               }
             />
           </Form.Field>
           <Form.Field>
-            <label>Value in Ether</label>
+            <label>需要多少资金（ether）单位</label>
             <Input
               value={this.state.value}
+              placeholder="0.1 eth"
               onChange={event => this.setState({ value: event.target.value })}
             />
           </Form.Field>
           <Form.Field>
-            <label>Recipient</label>
+            <label>收款人地址</label>
             <Input
               value={this.state.recipient}
+              placeholder="0xbDBE2B6F9Df45CA3F321B20b7F6876a709D06B04"
               onChange={event =>
                 this.setState({ recipient: event.target.value })
               }
             />
           </Form.Field>
           <Button loading={this.state.loading} primary>
-            Create!
+            递交请求
           </Button>
           <Message error header="Oops" content={this.state.errorMessage} />
         </Form>
